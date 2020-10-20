@@ -2,7 +2,6 @@
 Trip planner
 
 
-holiday_planner
 Build Setup
 
 install dependencies
