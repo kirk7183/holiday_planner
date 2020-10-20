@@ -1,0 +1,25 @@
+npm install sass-loader node-sass style-loader --save
+
+korisceno:
+npm
+cli
+babel
+vuex 
+router
+
+UI framework:
+vuetify
+
+preprocessor:
+sass
+
+Database:
+firebase -> firestore
+
+Vue Simple Alert
+npm i vue-simple-alert
+https://vuejsexamples.com/simple-alert-for-vue-js/
+
+
+napravljena je tzv. realtime database - ako dve osobe u isto vreme koriste program sa istom imenom plana i jedna update listu na bilo koji nacin, kod druge 
+osobe ce se lista automatski update takodje
