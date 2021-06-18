@@ -51,26 +51,27 @@
         :checkAll="!anyRemaining"
       ></todo-item>
     </transition-group>
-
-    <div class="extra-container1">
-      <!--import components-->
-      <todo-check-all></todo-check-all>
-      <todo-items-remaining></todo-items-remaining>
-    </div>
-    <!-- end extra-container -->
-
-    <div class="extra-container2">
-      <!--import components dugme ALL, NOT FINISHED, FINISHED-->
-      <todo-filtered></todo-filtered>
-
-      <div>
-        <transition name="fade">
-          <!--import components-->
-          <todo-clear-completed></todo-clear-completed>
-        </transition>
+    <div class="grouping">
+      <div class="extra-container1">
+        <!--import components-->
+        <todo-check-all></todo-check-all>
+        <todo-items-remaining></todo-items-remaining>
       </div>
+      <!-- end extra-container -->
+
+      <div class="extra-container2">
+        <!--import components dugme ALL, NOT FINISHED, FINISHED-->
+        <todo-filtered></todo-filtered>
+
+        <div>
+          <transition name="fade">
+            <!--import components-->
+            <todo-clear-completed></todo-clear-completed>
+          </transition>
+        </div>
+      </div>
+      <!-- end extra-container -->
     </div>
-    <!-- end extra-container -->
   </div>
 </template>
 
@@ -203,6 +204,7 @@ input[type="password"] {
   padding: 10px;
   border: 1px solid white;
   margin-left: 12px;
+  word-break: break-all;
 }
 
 .todo-item-edit {
