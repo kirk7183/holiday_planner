@@ -29,7 +29,7 @@
       v-model="info"
       @keyup.enter="addTodo()"
     />
-    <button @click="addTodo">Add</button>
+    <button class="button-add" @click="addTodo">Add</button>
     <!-- animation circle-->
     <div v-if="$store.state.loading" class="lds-ring">
       <div class="need for animation 1"></div>
@@ -149,131 +149,151 @@ export default {
 
 <style lang="scss" >
 @import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
 
-input[type="text"] {
-  font-size: 15px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+body {
+  background-color: #f5f5f5;
+  font-family: "Poppins", sans-serif;
 }
-input[type="password"] {
-  font-size: 15px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
-.message {
-  margin-bottom: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  animation-duration: 0.3s;
+input[type="checkbox"]:hover {
+  cursor: pointer;
 }
 .todo-input {
   width: 100%;
-  padding: 10px 18px;
-  font-size: 18px;
-  margin-bottom: 16px;
-
-  // &:focus {
-  // outline: 0;
-  //
-  // }
-}
-
-.todo-item {
-  margin-bottom: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  animation-duration: 0.3s;
-}
-
-.remove-item {
-  cursor: pointer;
-  margin-left: 14px;
-  &:hover {
-    color: black;
-  }
-}
-
-.todo-item-left {
-  display: flex;
-  align-items: center;
-}
-
-.todo-item-label {
-  padding: 10px;
-  border: 1px solid white;
-  margin-left: 12px;
-  word-break: break-all;
-}
-
-.todo-item-edit {
-  font-size: 24px;
-  color: #2c3e50;
-  margin-left: 12px;
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc; //override defaults
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-
-  &:focus {
-    outline: none;
-  }
-}
-
-.completed {
-  text-decoration: line-through;
-  color: grey;
-}
-.notCompleted {
-  color: red;
-}
-
-.extra-container1 {
-  position: sticky;
-  background: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  // width: 100%;
+  padding: 12px;
   font-size: 16px;
-  border-top: 1px solid lightgrey;
-  padding-top: 14px;
-  margin-bottom: 14px;
-  bottom: 38px;
+  border: none;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #333;
 }
-.extra-container2 {
-  background: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 16px;
-  border-top: 1px solid lightgrey;
-  padding-top: 14px;
-  margin-bottom: 14px;
-  bottom: 0;
-  position: sticky;
+.todo-input:not(:first-of-type) {
+  margin-top: 10px;
+}
+.todo-input::placeholder {
+  color: #999;
 }
 
 button {
   font-size: 14px;
-  background-color: white;
-  appearance: none;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4caf50;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+button.button-add {
+  width: 150px;
+  margin: 15px 0 30px;
+  font-size: 16px;
+}
 
-  &:hover {
-    background: lightgray;
+button:hover {
+  background-color: #45a049;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+button:focus {
+  outline: none;
+}
+// button:not(first-of-type),
+button :last-of-type {
+  margin-right: 0;
+}
+
+.lds-ring {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  width: 64px;
+  height: 64px;
+}
+
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 51px;
+  height: 51px;
+  margin: 6px;
+  border: 6px solid #4caf50;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #4caf50 transparent transparent transparent;
+}
+
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
   }
-
-  &:focus {
-    outline: none;
+  100% {
+    transform: rotate(360deg);
   }
 }
 
-.active {
-  background: rgb(119, 137, 241);
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
-// CSS Transitions
+// .todo-item:hover {
+//   transform: translateY(-3px);
+// }
+.todo-item-left {
+  display: flex;
+}
+.todo-item-label {
+  flex-grow: 1;
+  margin-left: 10px;
+  font-size: 16px;
+  color: #333;
+  // word-break: break-all;
+  text-align: left;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.notCompleted {
+  color: #f44336;
+}
+
+.extra-container1,
+.extra-container2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  margin-top: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.extra-container1 {
+  position: sticky;
+  bottom: 38px;
+}
+
+.extra-container2 {
+  position: sticky;
+  bottom: 0;
+}
+
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.2s;
@@ -284,46 +304,8 @@ button {
   opacity: 0;
 }
 
-// CSS Spinning Loader
-.lds-ring {
-  display: block;
-  position: relative;
-  width: 64px;
-  height: 64px;
-  margin: auto;
-  margin-bottom: 16px;
-}
-.lds-ring div {
-  box-sizing: border-box;
-  display: block;
-  position: absolute;
-  width: 51px;
-  height: 51px;
-  margin: 6px;
-  border: 6px solid grey;
-  border-radius: 50%;
-  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: grey transparent transparent transparent;
-}
-.lds-ring div:nth-child(1) {
-  animation-delay: -0.45s;
-}
-.lds-ring div:nth-child(2) {
-  animation-delay: -0.3s;
-}
-.lds-ring div:nth-child(3) {
-  animation-delay: -0.15s;
-}
-@keyframes lds-ring {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 .info {
   margin-left: 10px;
-  border-radius: 100px;
+  border-radius: 50px;
 }
 </style>

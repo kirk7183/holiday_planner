@@ -1,5 +1,7 @@
 <template>
-  <button v-if="showClearFinishedButton" @click="clearFinished">Delete finished</button>
+  <button v-if="showClearFinishedButton" @click="clearFinished">
+    Delete Done
+  </button>
 </template>
 
 <script>

@@ -1,8 +1,20 @@
 <template>
   <div>
-    <button :class="{ active: filter == 'all' }" @click="changeFilter('all')">All</button>
-    <button :class="{ active: filter == 'active' }" @click="changeFilter('active')">Not finished</button>
-    <button :class="{ active: filter == 'completed' }" @click="changeFilter('completed')">Finished</button>
+    <button :class="{ active: filter == 'all' }" @click="changeFilter('all')">
+      All
+    </button>
+    <button
+      :class="{ active: filter == 'active' }"
+      @click="changeFilter('active')"
+    >
+      Pending
+    </button>
+    <button
+      :class="{ active: filter == 'completed' }"
+      @click="changeFilter('completed')"
+    >
+      Done
+    </button>
   </div>
 </template>
 
@@ -21,4 +33,9 @@ export default {
   },
 };
 </script>
+<style >
+button {
+  margin-right: 5px;
+}
+</style>
 

@@ -1,9 +1,9 @@
 <template>
   <div id="app" class="container">
-    <p class="ime">web-app-developer: vasicigorjsp@gmail.com</p>
+    <p class="app-developer">app-dev: vasicigorjsp@gmail.com</p>
     <img alt="Vue logo" src="./assets/holiday_planner.png" class="logo" style />
     <!-- import components -->
-    <Login v-if="!IsLoggedIn"></Login>
+    <Login id="login-component" v-if="!IsLoggedIn"></Login>
     <todo-list v-if="IsLoggedIn"></todo-list>
   </div>
 </template>
@@ -56,13 +56,23 @@ export default {
 
   margin: 10px auto;
   margin-bottom: 0;
-  height: 95px;
+  height: 85px;
 }
-.ime {
-  margin: 0;
-  font-size: 12px;
-  /* display: flex; */
+.app-developer {
+  font-size: 14px;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
   text-align: center;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  transform: skew(-10deg);
+  transition: background-color 0.3s ease;
+}
+
+.app-developer:hover {
+  background-color: #4a90e2;
+  cursor: default;
 }
 
 #app {
@@ -89,5 +99,8 @@ export default {
 p {
   display: flex;
   justify-content: center;
+}
+#login-component {
+  margin-top: 50px;
 }
 </style>

@@ -1,11 +1,13 @@
 <template>
   <div style="text-align: center">
     <!-- import component-->
-    <button @click="oldPlanMethod()" style="width: 150px; margin-bottom: 10px">
+    <button @click="oldPlanMethod()" class="btn-style-1 new-plan">
       Old plan
     </button>
     <br />
-    <button @click="newPlanMethod()" style="width: 150px">New plan</button>
+    <button @click="newPlanMethod()" class="btn-style-1 old-plan">
+      New plan
+    </button>
 
     <!--old plan - login -->
     <div v-if="oldPlanBoolean">
@@ -73,23 +75,23 @@
     </div>
 
     <!-- Main message -->
-    <div v-if="!oldPlanBoolean && !newPlanBoolean">
-      <p style="font-size: 30px; margin-bottom: 5px">Welcome</p>
-      <p style="padding: 5px; border: 3px solid black">
-        This is web application that will make it easier for you to prepare
-        things for the trip.
+    <div v-if="!oldPlanBoolean && !newPlanBoolean" class="welcome-container">
+      <p class="welcome-text">Welcome to our Holiday Planner</p>
+      <p class="welcome-text app-update">
+        Our web application is designed to simplify your trip preparation
+        process.
       </p>
-      <p style="padding: 5px; border: 3px solid gray">
-        The app updates data in real-time so that multiple users can use one
-        plan at a same time.
+      <p class="welcome-text app-update user-info">
+        Experience real-time updates, allowing multiple users to collaborate on
+        a single plan simultaneously.
       </p>
-      <p style="padding: 5px; border: 3px solid orange">
-        Each time a user adds, modifies or deletes an item in the list, all
-        users will receive this information immediately.
+      <p class="welcome-text app-update app-explain">
+        Any additions, modifications, or deletions made by one user are
+        instantly shared with all other users.
       </p>
-      <p style="padding: 5px; border: 3px solid green">
-        If you have any advice on how to improve the application, feel free to
-        contact me
+      <p class="welcome-text app-improvement">
+        We value your feedback! Please don't hesitate to contact us with any
+        suggestions to enhance our application.
       </p>
     </div>
   </div>
@@ -191,4 +193,96 @@ export default {
 </script>
 
 <style>
+.btn-style-1 {
+  width: 150px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.btn-style-1.new-plan {
+  background-color: #4caf50;
+}
+
+.btn-style-1.old-plan {
+  background-color: #4286f4;
+}
+
+.btn-style-1:hover {
+  filter: brightness(85%);
+}
+.welcome-container {
+  font-size: 25px;
+  margin-bottom: 5px;
+}
+.welcome-container p:first-of-type {
+  font-size: 22px;
+}
+
+.welcome-container p:not(first-of-type) {
+  font-size: 16px;
+}
+
+.welcome-text {
+  padding: 5px;
+  border: 3px solid black;
+}
+
+.app-update {
+  padding: 5px;
+  border: 3px solid gray;
+}
+
+.user-info {
+  padding: 5px;
+  border: 3px solid green;
+}
+.app-explain {
+  padding: 5px;
+  border: 3px solid orange;
+}
+
+.app-improvement {
+  padding: 5px;
+  border: 3px solid #4286f4;
+}
+.welcome-text,
+.app-update,
+.user-info,
+.app-improvement {
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.welcome-text {
+  background-color: #f9f9f9;
+  color: #333;
+  font-weight: bold;
+}
+
+.app-update {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.user-info {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.app-improvement {
+  background-color: #f5f5f5;
+  color: #333;
+}
+.app-update,
+.user-info,
+.app-improvement {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
 </style>
