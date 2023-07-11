@@ -1,7 +1,9 @@
 <template>
-  <div class="container">
-    <p class="plan-label">Plan name:</p>
-    <p class="plan-name">{{ planName }}</p>
+  <div class="container logout">
+    <p class="plan-label">
+      Plan name: <span class="plan-name">{{ planName }}</span>
+    </p>
+    <!-- <p class="plan-name">{{ planName }}</p> -->
     <button class="logout-button" @click="Logout">Logout</button>
   </div>
 </template>
@@ -33,6 +35,9 @@ export default {
 .plan-label {
   margin: 0;
   font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .plan-name {
@@ -41,7 +46,8 @@ export default {
 }
 
 .logout-button {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  margin-top: 5px;
   width: 150px;
   padding: 10px;
   border: none;

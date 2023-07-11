@@ -63,7 +63,7 @@
         <!--import components dugme ALL, NOT FINISHED, FINISHED-->
         <todo-filtered></todo-filtered>
 
-        <div>
+        <div class="todo-clear-complete-style">
           <transition name="fade">
             <!--import components-->
             <todo-clear-completed></todo-clear-completed>
@@ -200,7 +200,6 @@ button:hover {
 button:focus {
   outline: none;
 }
-// button:not(first-of-type),
 button :last-of-type {
   margin-right: 0;
 }
@@ -240,7 +239,7 @@ button :last-of-type {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px;
+  padding: 12px;
   margin-bottom: 10px;
   background-color: #fff;
   border-radius: 5px;
@@ -248,18 +247,16 @@ button :last-of-type {
   transition: transform 0.3s ease;
 }
 
-// .todo-item:hover {
-//   transform: translateY(-3px);
-// }
 .todo-item-left {
   display: flex;
 }
 .todo-item-label {
+  display: flex;
+  align-items: center;
   flex-grow: 1;
   margin-left: 10px;
   font-size: 16px;
   color: #333;
-  // word-break: break-all;
   text-align: left;
 }
 
@@ -278,19 +275,22 @@ button :last-of-type {
   align-items: center;
   justify-content: space-between;
   padding: 16px;
-  margin-top: 20px;
+
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .extra-container1 {
-  position: sticky;
+  // position: sticky;
   bottom: 38px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .extra-container2 {
-  position: sticky;
+  padding: 0 12px 16px;
+  // position: sticky;
   bottom: 0;
 }
 
@@ -307,5 +307,22 @@ button :last-of-type {
 .info {
   margin-left: 10px;
   border-radius: 50px;
+}
+.info {
+  width: 24px;
+  height: 24px;
+  background-color: #4a90e2;
+  color: white;
+  font-size: 12px;
+  border: none;
+  cursor: pointer;
+  margin: 0 10px;
+  padding: 0px;
+}
+
+@media screen and (max-width: 430px) {
+  .extra-container2 {
+    display: block;
+  }
 }
 </style>

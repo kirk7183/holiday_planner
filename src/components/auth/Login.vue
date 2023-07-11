@@ -16,14 +16,16 @@
         <Message />
       </p>
       <input
+        class="input-style"
         v-focus
         type="text"
         v-model="plan"
-        style="margin: 10px"
+        style="margin: 10px 0"
         placeholder="Plan name"
       />
       <br />
       <input
+        class="input-style"
         type="password"
         style="margin-bottom: 10px"
         v-model="password"
@@ -46,6 +48,7 @@
       </p>
       <div>
         <input
+          class="input-style"
           v-focus
           type="text"
           v-model="plan"
@@ -54,6 +57,7 @@
         />
         <br />
         <input
+          class="input-style"
           type="password"
           v-model="password"
           placeholder="Password"
@@ -61,6 +65,7 @@
         />
         <br />
         <input
+          class="input-style"
           type="password"
           v-model="repeatPasword"
           placeholder="Repeat password"
@@ -68,7 +73,11 @@
           @keyup.enter="NewPlan()"
         />
         <br />
-        <button @click="NewPlan()" style="margin-top: 10px">
+        <button
+          class="btn-style-1 new-plan"
+          @click="NewPlan()"
+          style="margin-top: 10px"
+        >
           Make new plan
         </button>
       </div>
@@ -172,7 +181,7 @@ export default {
       this.newPlanBoolean = !this.newPlanBoolean;
       this.$store.dispatch("message", {
         sendMessage: "WELCOME, we hope you will enjoy our holiday planner",
-        sendMessageColor: "blue",
+        sendMessageColor: "#4286f4",
       });
     },
     oldPlanMethod() {
@@ -284,5 +293,15 @@ export default {
 .user-info,
 .app-improvement {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.input-style {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #333;
 }
 </style>

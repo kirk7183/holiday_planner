@@ -1,5 +1,9 @@
 <template>
-  <button v-if="showClearFinishedButton" @click="clearFinished">
+  <button
+    class="todo-clear-completed-style"
+    v-if="showClearFinishedButton"
+    @click="clearFinished"
+  >
     Delete Done
   </button>
 </template>
@@ -23,3 +27,12 @@ export default {
 };
 </script>
 
+<style>
+.todo-clear-completed-style {
+  background: #dc3545;
+}
+button {
+  margin: 16px 5px 0;
+  flex: 1 1;
+}
+</style>

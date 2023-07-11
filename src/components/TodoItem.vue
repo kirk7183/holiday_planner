@@ -6,11 +6,11 @@
         v-if="!editing"
         @dblclick="editTodo"
         class="todo-item-label"
-        :class="[{ completed : completed }, {notCompleted : !completed}]"
+        :class="[{ completed: completed }, { notCompleted: !completed }]"
       >
-        {{byWho}} - {{title}}
-        <button v-if="info" class="info" @click="alert()">i</button>
-        <i class="fas fa-question-circle"></i>
+        {{ byWho }} - {{ title }}
+        <!-- <i class="fas fa-question-circle"></i> -->
+        <button v-if="info" class="info" @click="alert()">?</button>
       </div>
       <input
         v-else

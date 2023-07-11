@@ -53,10 +53,9 @@ export default {
 }
 .logo {
   display: block;
-
   margin: 10px auto;
   margin-bottom: 0;
-  height: 85px;
+  height: 80px;
 }
 .app-developer {
   font-size: 14px;
@@ -66,7 +65,6 @@ export default {
   text-align: center;
   border-radius: 5px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-  transform: skew(-10deg);
   transition: background-color 0.3s ease;
 }
 
